@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Communicate • Shackleton Federation</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; padding:1rem; font-size:20px; }
+    a { color:#000; }
+    header, main { max-width:980px; margin:0 auto; }
+    .back { display:inline-block; margin:.5rem 0 1rem; border:2px solid #111; padding:.4rem .7rem; border-radius:10px; text-decoration:none; }
+    form { border:2px solid #111; border-radius:14px; padding:1rem; background:#f6f6f6; }
+    label { display:block; margin:.75rem 0 .25rem; }
+    input, textarea {
+      width:100%; padding:.7rem; font-size:1rem; border:2px solid #111; border-radius:10px; background:#fff;
+    }
+    button {
+      margin-top:.8rem; padding:.7rem 1rem; border:3px solid #111; background:#fff; border-radius:12px; font-size:1rem; cursor:pointer;
+    }
+    .muted { color:#444; font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back" href="./index.html">← Home</a>
+    <h1>Communicate</h1>
+    <p class="muted">Send feedback or proposals. For now, messages open your email app.</p>
+  </header>
+
+  <main>
+    <form id="contact" onsubmit="sendEmail(event)">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Your email</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="msg">Message</label>
+      <textarea id="msg" name="msg" rows="6" required></textarea>
+
+      <button type="submit">Open Email Draft</button>
+      <p class="muted">Later, replace this with a real form endpoint (Formspree/Netlify) without changing the layout.</p>
+    </form>
+  </main>
+
+  <script>
+    function sendEmail(e){
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const msg = encodeURIComponent(document.getElementById('msg').value.trim());
+      const subject = `Website message from ${decodeURIComponent(name)}`;
+      const body = `From: ${decodeURIComponent(name)} <${decodeURIComponent(email)}>\n\n${decodeURIComponent(msg)}`;
+      window.location.href = `mailto:tom_paine1776@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
+</body>
+</html>
