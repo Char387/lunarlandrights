@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<p><a href="vault-catalog-wartime-chat.html">Go to the Vault Catalog</a></p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shackleton Federation</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #444444;
+      --accent: #000000; /* keep very high contrast */
+      --card: #f2f2f2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      font-size: 20px; /* larger for readability */
+    }
+    header {
+      border-bottom: 4px solid var(--fg);
+      padding: 1.25rem 1rem;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 1rem; }
+    h1 { margin: 0 0 .25rem 0; font-size: 2rem; }
+    .tagline { color: var(--muted); margin: 0; font-size: 1.1rem; }
+    nav {
+      display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      margin: 1.25rem 0 1.75rem;
+    }
+    .navcard {
+      display: block; text-decoration: none; color: var(--fg);
+      border: 3px solid var(--fg); border-radius: 14px; background: var(--card);
+      padding: 1rem 1.25rem; transition: transform .06s ease-in-out;
+    }
+    .navcard:focus, .navcard:hover { outline: none; transform: translateY(-2px); }
+    .navcard h2 { margin: 0 0 .25rem 0; font-size: 1.25rem; }
+    .navcard p { margin: 0; color: var(--muted); font-size: 1rem; }
+    section { margin: 2rem 0; }
+    .callout {
+      border: 3px dashed var(--fg); border-radius: 14px; padding: 1rem 1.25rem; background: #fff;
+    }
+    footer {
+      border-top: 2px solid var(--fg); padding: 1rem; text-align: center; color: var(--muted);
+    }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#eee; padding:.1rem .35rem; border-radius:4px; border:1px solid #bbb;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" role="banner">
+      <h1>Shackleton Federation</h1>
+      <p class="tagline">A covenant to prevent chaos and predation; property, stewardship, and progress beyond Earth.</p>
+    </div>
+  </header>
+  <main class="wrap" role="main">
+    <!-- “Radio buttons” as big, clear navigation cards -->
+    <nav aria-label="Primary">
+<a class="navcard" href="./principles.html">
+  <h2>Principles</h2>
+  <p>How we decide what to fix next—triage for real progress.</p>
+</a>
+      <a class="navcard" href="./archive.html">
+        <h2>Archive</h2>
+        <p>Posts, notes, and prior updates. A living record (not history-by-winners).</p>
+      </a>
+      <a class="navcard" href="./legal.html">
+        <h2>Legal Documents</h2>
+        <p>Drafts, charters, covenants, and agreements that shape our rules of the game.</p>
+      </a>
+      <a class="navcard" href="./contact.html">
+        <h2>Communicate</h2>
+        <p>Send a message, share feedback, or propose contributions.</p>
+      </a>
+    </nav>
+
+    <section class="callout" aria-label="Latest">
+      <h2 style="margin-top:0">Latest</h2>
+      <p><strong>Status:</strong> Website scaffold is live. Next up: start dropping real content into <em>Archive</em> and <em>Legal Documents</em>.</p>
+      <ul>
+        <li>Post #1 suggestion: “Why a Federation, not a Government.”</li>
+        <li>Legal draft stub: “Shackleton Covenant – Preamble + Article I (Property as Sacred).”</li>
+      </ul>
+      <p><strong>Tip:</strong> Use the <span class="kbd">Add file → Create new file</span> button in GitHub to add new pages; link to them from Archive/Legal as you go.</p>
+    </section>
+
+    <section>
+      <h2>Mission</h2>
+      <p>We exist to coordinate without tyranny: a covenant that limits power, protects property and dignity, and rewards real progress (not hype) in space and beyond.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    © <span id="y"></span> Shackleton Federation • Built on GitHub Pages
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
